@@ -9,6 +9,9 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -22,6 +25,9 @@ public class Post {
     private String title;
     private String content;
     private String writer;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 
     public Post(String title, String content, String writer) {
         this.title = title;
